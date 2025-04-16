@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest Clash Royale news, balance changes, updates, and tournament announcements for 2025.">
+    <title>Clash Royale News & Updates (2025) | RoyaleMeta.fun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo1.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Page-specific styles */
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        .news-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .news-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .news-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .news-card-featured {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        .news-card-featured .news-image {
+            height: 300px;
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-category {
+            position: absolute;
+            top: var(--spacing-sm);
+            left: var(--spacing-sm);
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .news-category.update {
+            background-color: var(--primary);
+        }
+        
+        .news-category.balance {
+            background-color: var(--accent-green);
+        }
+        
+        .news-category.event {
+            background-color: var(--secondary);
+        }
+        
+        .news-category.tournament {
+            background-color: var(--accent-purple);
+        }
+        
+        .news-content {
+            padding: var(--spacing-md);
+        }
+        
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .news-title {
+            margin-bottom: var(--spacing-xs);
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+        
+        .news-card-featured .news-title {
+            font-size: 2.4rem;
+        }
+        
+        .news-excerpt {
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .news-card-small {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .news-card-small .news-image {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+        
+        .news-card-small .news-content {
+            padding: var(--spacing-xs);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .news-card-small .news-title {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+        
+        .news-card-small .news-date {
+            font-size: 1.2rem;
+        }
+        
+        .sidebar-section {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+        }
+        
+        .sidebar-section h3 {
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-section h3 i {
+            color: var(--primary);
+        }
+        
+        .upcoming-events {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .event-item {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .event-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            flex-shrink: 0;
+        }
+        
+        .event-date .month {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+        
+        .event-date .day {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .event-info {
+            flex: 1;
+        }
+        
+        .event-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .event-info p {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+        }
+        
+        .popular-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: var(--bg-light);
+            border-radius: var(--radius-full);
+            font-size: 1.3rem;
+            transition: var(--transition-fast);
+        }
+        
+        .tag:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+        
+        .pagination-item:hover, .pagination-item.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-card-featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-card-featured .news-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="logo">
+                <h1>RoyaleMeta<span>.fun</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="deck.html">Deck</a></li>
+                    <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+                    <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                    <li><a href="clash-royale-advanced-strategies-guide.html">Strategies</a></li>
+                    <li><a href="clash-royale-news-updates.html" class="active">News</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Clash Royale <span>News & Updates</span></h2>
+                <p>Stay updated with the latest balance changes, updates, events, and tournament announcements for Clash Royale in 2025.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/dart-goblin.png" alt="Clash Royale News">
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="news-container">
+                <div class="news-main">
+                    <article class="news-card news-card-featured">
+                        <div class="news-image">
+                            <span class="news-category balance">Balance Changes</span>
+                            <img src="https://clashroyale.inbox.supercell.com/9jtsgmsiuthj/3kJQayYxEmleEe4uX6Qcf7/48bedc24ae4c8de2d5faf05eb7ef1052/CR_Balance_Changes_April2025_thumbnail.jpg?fm=webp&w=1281" alt="April Balance Changes">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>April 9, 2025</span>
+                            </div>
+                            <h2 class="news-title">April Balance Changes!</h2>
+                            <p class="news-excerpt">Latest balance changes bringing exciting adjustments to your favorite cards. Stay tuned for the complete details and meta impact analysis.</p>
+                            <a href="#" class="btn-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-image">
+                            <span class="news-category update">Update</span>
+                            <img src="https://clashroyale.inbox.supercell.com/9jtsgmsiuthj/6Rh1rWHg93GaWHoGAeZbRZ/a35f470a675abc3401502c3f8c160b20/SUP4103_Season_70_Article_Thumbnail-960x563.jpg?fm=webp&w=1281" alt="A Tale of Thieves Season">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>April 7, 2025</span>
+                            </div>
+                            <h2 class="news-title">A Tale of Thieves Season!</h2>
+                            <p class="news-excerpt">Get ready for an exciting new season themed around the most notorious thieves in the Clash universe. New content and rewards await!</p>
+                            <a href="#" class="btn-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-image">
+                            <span class="news-category update">Update</span>
+                            <img src="https://clashroyale.inbox.supercell.com/9jtsgmsiuthj/2qDgQGgvqlhOfyFzOOuLkh/0e5c748010af85663707d24c483e45c3/CR_TVRoyale_MAR25_Thumbnail_01.jpg?fm=webp&w=1281" alt="April Update">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>March 31, 2025</span>
+                            </div>
+                            <h2 class="news-title">APRIL UPDATE!</h2>
+                            <p class="news-excerpt">Major update incoming! Get ready for new features, improvements, and exciting content coming to Clash Royale this April.</p>
+                            <a href="#" class="btn-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <div class="pagination">
+                        <a href="#" class="pagination-item active">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item"><i class="fas fa-ellipsis-h"></i></a>
+                        <a href="#" class="pagination-item">10</a>
+                        <a href="#" class="pagination-item"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-sidebar">
+                    <div class="sidebar-section">
+                        <h3><i class="fas fa-search"></i> Search News</h3>
+                        <form class="search-form">
+                            <input type="text" placeholder="Search news..." required>
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
+                        <div class="upcoming-events">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">Apr</span>
+                                    <span class="day">10</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Draft Challenge</h4>
+                                    <p>Win exclusive rewards and gold</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">Apr</span>
+                                    <span class="day">15</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Global Tournament</h4>
+                                    <p>Compete for top prizes and rewards</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">May</span>
+                                    <span class="day">1</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Season 43 Start</h4>
+                                    <p>New season, new rewards, new challenges</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="month">May</span>
+                                    <span class="day">15</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>CRL 2025 East</h4>
+                                    <p>Professional tournament begins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3><i class="fas fa-fire"></i> Popular News</h3>
+                        <div class="popular-news">
+                            <article class="news-card-small">
+                                <div class="news-image">
+                                    <img src="https://cdn.royaleapi.com/static/img/blog-assets/season-42-balance/header.jpg?t=e7c50ff0c" alt="April 2025 Update">
+                                </div>
+                                <div class="news-content">
+                                    <h3 class="news-title">April 2025 Update: New Champion Card</h3>
+                                    <div class="news-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>April 3, 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-small">
+                                <div class="news-image">
+                                    <img src="https://cdn.royaleapi.com/static/img/blog-assets/crl/crl-2025-west.jpg?t=e7c50ff0c" alt="CRL 2025 West Announcement">
+                                </div>
+                                <div class="news-content">
+                                    <h3 class="news-title">CRL 2025 West Teams Announced</h3>
+                                    <div class="news-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>March 20, 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-small">
+                                <div class="news-image">
+                                    <img src="https://cdn.royaleapi.com/static/img/blog-assets/updates/clan-wars-3.jpg?t=e7c50ff0c" alt="Clan Wars 3.0">
+                                </div>
+                                <div class="news-content">
+                                    <h3 class="news-title">Clan Wars 3.0: Everything We Know</h3>
+                                    <div class="news-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>March 15, 2025</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3><i class="fas fa-tags"></i> Popular Tags</h3>
+                        <div class="popular-tags">
+                            <a href="#" class="tag">Update</a>
+                            <a href="#" class="tag">Balance Changes</a>
+                            <a href="#" class="tag">Tournament</a>
+                            <a href="#" class="tag">CRL</a>
+                            <a href="#" class="tag">Events</a>
+                            <a href="#" class="tag">Challenges</a>
+                            <a href="#" class="tag">Rewards</a>
+                            <a href="#" class="tag">Meta</a>
+                            <a href="#" class="tag">Decks</a>
+                            <a href="#" class="tag">Champions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with Clash Royale News</h2>
+                    <p>Subscribe to our newsletter and be the first to know about balance changes, updates, events, and tournament announcements.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="footer-logo">
+                    <h3>RoyaleMeta<span>.fun</span></h3>
+                    <p>The ultimate resource hub for Clash Royale players. Get the latest meta decks, tier lists, strategies, and guides.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deck.html">Deck</a></li>
+                        <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+                        <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                        <li><a href="clash-royale-advanced-strategies-guide.html">Strategies</a></li>
+                        <li><a href="clash-royale-news-updates.html">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Deck Builder</a></li>
+                        <li><a href="#">Card Calculator</a></li>
+                        <li><a href="#">Win Rate Tracker</a></li>
+                        <li><a href="#">Pro Player Profiles</a></li>
+                        <li><a href="#">Tournament Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RoyaleMeta.fun. All rights reserved. Not affiliated with Supercell.</p>
+                <p>Clash Royale and its content are trademarks and copyrights of Supercell.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

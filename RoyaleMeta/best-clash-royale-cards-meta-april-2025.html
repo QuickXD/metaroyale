@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the best Clash Royale cards for April 2025. Our updated meta tier list ranks all cards from S-tier to F-tier with pro strategies and counters.">
+    <title>Best Clash Royale Cards Meta Tier List - April 2025 | RoyaleMeta.fun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo1.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Page-specific styles */
+        .tier-list-container {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+        }
+        
+        .tier-row {
+            display: flex;
+            margin-bottom: var(--spacing-sm);
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        
+        .tier-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            font-size: 2.4rem;
+            font-weight: 700;
+            padding: var(--spacing-xs);
+        }
+        
+        .tier-s .tier-label {
+            background-color: #FF4E50;
+            color: white;
+        }
+        
+        .tier-a .tier-label {
+            background-color: #FF9C27;
+            color: white;
+        }
+        
+        .tier-b .tier-label {
+            background-color: #FFD700;
+            color: var(--text-dark);
+        }
+        
+        .tier-c .tier-label {
+            background-color: #2ED573;
+            color: white;
+        }
+        
+        .tier-d .tier-label {
+            background-color: #70A1FF;
+            color: white;
+        }
+        
+        .tier-f .tier-label {
+            background-color: #A0B1E1;
+            color: var(--text-dark);
+        }
+        
+        .tier-cards {
+            display: flex;
+            flex-wrap: wrap;
+            padding: var(--spacing-xs);
+            gap: var(--spacing-xs);
+            flex: 1;
+            overflow-x: auto;
+            justify-content: flex-start;
+        }
+        
+        .tier-card {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+        
+        .tier-card:hover {
+            transform: scale(1.1);
+            z-index: 2;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tier-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .card-details {
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .card-detail {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            gap: var(--spacing-md);
+        }
+        
+        .card-image {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .card-info {
+            flex: 1;
+        }
+        
+        .card-info h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .card-stats {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .card-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .card-stat i {
+            color: var(--primary);
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: var(--radius-full);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: var(--spacing-xs);
+        }
+        
+        .tier-badge.s-tier {
+            background-color: #FF4E50;
+            color: white;
+        }
+        
+        .tier-badge.a-tier {
+            background-color: #FF9C27;
+            color: white;
+        }
+        
+        .meta-shifts {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+        }
+        
+        .meta-shifts h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .meta-shift-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .meta-shift-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .shift-direction {
+            font-size: 2.4rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .shift-up {
+            color: var(--accent-green);
+        }
+        
+        .shift-down {
+            color: var(--accent-red);
+        }
+        
+        .shift-neutral {
+            color: var(--text-muted);
+        }
+        
+        .shift-info {
+            flex: 1;
+        }
+        
+        .shift-info h4 {
+            margin-bottom: 0;
+        }
+        
+        .shift-reason {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+        }
+        
+        .table-of-contents {
+            background-color: var(--bg-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .table-of-contents h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: var(--spacing-sm);
+        }
+        
+        .table-of-contents li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .table-of-contents a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            transition: var(--transition-fast);
+        }
+        
+        .table-of-contents a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .deck-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .deck-card {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .deck-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="logo">
+                <h1>RoyaleMeta<span>.fun</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="deck.html">Deck</a></li>
+                    <li><a href="best-clash-royale-cards-meta-april-2025.html" class="active">Meta Tier List</a></li>
+                    <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                    <li><a href="clash-royale-advanced-strategies-guide.html">Strategies</a></li>
+                    <li><a href="clash-royale-news-updates.html">News</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Clash Royale <span>Meta Tier List</span></h2>
+                <p>April 2025 updated rankings of the best cards in Clash Royale. Dominate the arena with our expert analysis and pro strategies.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=400,h=320,format=auto/static/img/cards/v4-aba2f5ae/boss-bandit.png" alt="Clash Royale Meta Card">
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="table-of-contents">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#tier-list"><i class="fas fa-list"></i> Complete Tier List</a></li>
+                    <li><a href="#s-tier"><i class="fas fa-crown"></i> S-Tier Cards Analysis</a></li>
+                    <li><a href="#meta-shifts"><i class="fas fa-exchange-alt"></i> Recent Meta Shifts</a></li>
+                    <li><a href="#counters"><i class="fas fa-shield-alt"></i> Counter Strategies</a></li>
+                    <li><a href="#deck-recommendations"><i class="fas fa-th"></i> Deck Recommendations</a></li>
+                </ul>
+            </div>
+
+            <div class="content-intro">
+                <h2 id="tier-list" class="section-title">Clash Royale Card <span>Tier List</span> - April 2025</h2>
+                <p>Our tier list is based on win rates, usage rates, and performance in top ladder play and Grand Challenges. Cards are ranked from S-tier (strongest) to F-tier (weakest). This tier list is updated weekly to reflect the latest meta shifts and balance changes.</p>
+                <p>The April 2025 meta has been significantly impacted by the recent balance changes, with several cards rising to prominence while others have fallen out of favor. Let's dive into the current state of the meta!</p>
+            </div>
+
+            <div class="tier-list-container">
+                <!-- S TIER -->
+                <div class="tier-row tier-s">
+                    <div class="tier-label">S</div>
+                    <div class="tier-cards">
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/the-log.png" alt="The Log">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/arrows.png" alt="Arrows">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/guards.png" alt="Guards">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/skeletons.png" alt="Skeletons">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/ice-spirit.png" alt="Ice Spirit">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/goblin-gang.png" alt="Goblin Gang">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/fireball.png" alt="Fireball">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/cannon.png" alt="Cannon">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/zap.png" alt="Zap">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/miner.png" alt="Miner">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/boss-bandit.png" alt="Boss Bandit">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- A TIER -->
+                <div class="tier-row tier-a">
+                    <div class="tier-label">A</div>
+                    <div class="tier-cards">
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/bats.png" alt="Bats">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/rage.png" alt="Rage">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/knight.png" alt="Knight">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/tornado.png" alt="Tornado">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/wall-breakers.png" alt="Wall Breakers">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/spear-goblins.png" alt="Spear Goblins">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/hog-rider.png" alt="Hog Rider">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/skeleton-king.png" alt="Skeleton King">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/firecracker.png" alt="Firecracker">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/bomber.png" alt="Bomber">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/electro-spirit.png" alt="Electro Spirit">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B TIER (First Row) -->
+                <div class="tier-row tier-b">
+                    <div class="tier-label">B</div>
+                    <div class="tier-cards">
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/fisherman.png" alt="Fisherman">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/cannon-cart.png" alt="Cannon Cart">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/balloon.png" alt="Balloon">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/earthquake.png" alt="Earthquake">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/mortar.png" alt="Mortar">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/executioner.png" alt="Executioner">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/ice-wizard.png" alt="Ice Wizard">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/monk.png" alt="Monk">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/hunter.png" alt="Hunter">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/royal-giant.png" alt="Royal Giant">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/barbarians.png" alt="Barbarians">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/royal-ghost.png" alt="Royal Ghost">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/valkyrie.png" alt="Valkyrie">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/royal-recruits.png" alt="Royal Recruits">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/archers.png" alt="Archers">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B TIER (Second Row) -->
+                <div class="tier-row tier-b">
+                    <div class="tier-label">B</div>
+                    <div class="tier-cards">
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/inferno-dragon.png" alt="Inferno Dragon">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/prince.png" alt="Prince">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/royal-hogs.png" alt="Royal Hogs">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/barbarian-hut.png" alt="Barbarian Hut">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/poison.png" alt="Poison">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/barbarian-barrel.png" alt="Barbarian Barrel">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/mighty-miner.png" alt="Mighty Miner">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/lightning.png" alt="Lightning">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/giant.png" alt="Giant">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/goblins.png" alt="Goblins">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/night-witch.png" alt="Night Witch">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/mother-witch.png" alt="Mother Queen">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/dart-goblin.png" alt="Dart Goblin">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/rocket.png" alt="Rocket">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- C TIER (First Row) -->
+                <div class="tier-row tier-c">
+                    <div class="tier-label">C</div>
+                    <div class="tier-cards">
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/electro-wizard.png" alt="Electro Wizard">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/goblin-barrel.png" alt="Goblin Barrel">
+                        </div>
+                        <div class="tier-card">
+                            <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/lumberjack.png" alt="Lumberjack">
+                        </div>
+                       <!-- Continuing C TIER -->
+                       <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/mini-pekka.png" alt="Mini P.E.K.K.A">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/bowler.png" alt="Bowler">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/battle-ram.png" alt="Battle Ram">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/tesla.png" alt="Tesla">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/wizard.png" alt="Wizard">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- D TIER -->
+            <div class="tier-row tier-d">
+                <div class="tier-label">D</div>
+                <div class="tier-cards">
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/pekka.png" alt="P.E.K.K.A">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/goblin-hut.png" alt="Goblin Hut">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/elixir-golem.png" alt="Elixir Golem">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/freeze.png" alt="Freeze">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/furnace.png" alt="Furnace">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/ice-golem.png" alt="Ice Golem">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- F TIER -->
+            <div class="tier-row tier-f">
+                <div class="tier-label">F</div>
+                <div class="tier-cards">
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/witch.png" alt="Witch">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/mirror.png" alt="Mirror">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/elite-barbarians.png" alt="Elite Barbarians">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/clone.png" alt="Clone">
+                    </div>
+                    <div class="tier-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=70,h=70,format=auto/static/img/cards/v4-aba2f5ae/ram-rider.png" alt="Ram Rider">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- S-TIER CARDS DETAILED ANALYSIS -->
+        <h2 id="s-tier" class="section-title">S-Tier Cards <span>Analysis</span></h2>
+        <p>S-Tier cards are currently dominating the meta with high win rates and usage across all arenas. These cards provide exceptional value for their elixir cost and fit into multiple deck archetypes.</p>
+        
+        <div class="card-details">
+            <!-- BOSS BANDIT DETAILS -->
+            <div class="card-detail">
+                <div class="card-image">
+                    <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=120,h=120,format=auto/static/img/cards/v4-aba2f5ae/boss-bandit.png" alt="Boss Bandit">
+                </div>
+                <div class="card-info">
+                    <h3>Boss Bandit <span class="tier-badge s-tier">S</span></h3>
+                    <div class="card-stats">
+                        <div class="card-stat">
+                            <i class="fas fa-bolt"></i> 3 Elixir
+                        </div>
+                        <div class="card-stat">
+                            <i class="fas fa-percentage"></i> 56% Win Rate
+                        </div>
+                        <div class="card-stat">
+                            <i class="fas fa-chart-line"></i> 32% Usage Rate
+                        </div>
+                    </div>
+                    <p>Boss Bandit is currently the most overpowered card in Clash Royale. Her dash mechanic combined with incredible DPS makes her a threat on both offense and defense. The April 2025 balance changes increased her dash range, making her even more difficult to counter effectively.</p>
+                    <p><strong>Best Combos:</strong> Pair with Ice Spirit for quick cycling, or with Miner for devastating dual-lane pressure.</p>
+                    <p><strong>Counters:</strong> Guards, Skeletons + Ice Spirit, Cannon placed high to pull.</p>
+                </div>
+            </div>
+            
+            <!-- THE LOG DETAILS -->
+            <div class="card-detail">
+                <div class="card-image">
+                    <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=120,h=120,format=auto/static/img/cards/v4-aba2f5ae/the-log.png" alt="The Log">
+                </div>
+                <div class="card-info">
+                    <h3>The Log <span class="tier-badge s-tier">S</span></h3>
+                    <div class="card-stats">
+                        <div class="card-stat">
+                            <i class="fas fa-bolt"></i> 2 Elixir
+                        </div>
+                        <div class="card-stat">
+                            <i class="fas fa-percentage"></i> 54% Win Rate
+                        </div>
+                        <div class="card-stat">
+                            <i class="fas fa-chart-line"></i> 45% Usage Rate
+                        </div>
+                    </div>
+                    <p>The Log remains a staple in almost every deck due to its incredible versatility. For just 2 elixir, it provides knockback, damage to ground troops, and can reset charges. The abundance of Goblin Gang and Guards in the current meta makes The Log even more valuable.</p>
+                    <p><strong>Best Uses:</strong> Defending against swarm units, resetting charges, chip damage on towers.</p>
+                    <p><strong>Alternatives:</strong> Barbarian Barrel, Arrows (for air coverage).</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- META SHIFTS SECTION -->
+        <h2 id="meta-shifts" class="section-title">Recent <span>Meta Shifts</span></h2>
+        <div class="meta-shifts">
+            <h3>April 2025 Balance Changes Impact</h3>
+            
+            <div class="meta-shift-item">
+                <div class="shift-direction shift-up">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="shift-info">
+                    <h4>Boss Bandit ↑</h4>
+                    <p class="shift-reason">Dash range increased by 15%, making her more effective at catching units and towers.</p>
+                </div>
+            </div>
+            
+            <div class="meta-shift-item">
+                <div class="shift-direction shift-up">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div class="shift-info">
+                    <h4>Goblin Gang ↑</h4>
+                    <p class="shift-reason">Added one extra Spear Goblin, significantly increasing its DPS and split potential.</p>
+                </div>
+            </div>
+            
+            <div class="meta-shift-item">
+                <div class="shift-direction shift-down">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div class="shift-info">
+                    <h4>Electro Giant ↓</h4>
+                    <p class="shift-reason">Reflect damage reduced by 8%, making it more manageable to counter.</p>
+                </div>
+            </div>
+            
+            <div class="meta-shift-item">
+                <div class="shift-direction shift-neutral">
+                    <i class="fas fa-equals"></i>
+                </div>
+                <div class="shift-info">
+                    <h4>Skeletons =</h4>
+                    <p class="shift-reason">Remains a top-tier cycle card despite minor adjustments to other cycle cards.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COUNTER STRATEGIES SECTION -->
+        <h2 id="counters" class="section-title">Counter <span>Strategies</span></h2>
+        <div class="counter-strategies">
+            <div class="counter-strategy">
+                <h3>Countering Boss Bandit</h3>
+                <p>Boss Bandit's dash ability makes her tricky to counter, but well-timed placements can neutralize her effectively:</p>
+                <ul>
+                    <li>Place Guards or Skeletons in the center to absorb her dash damage</li>
+                    <li>Deploy Cannon high and central to pull her away from towers</li>
+                    <li>Use Ice Spirit + any small unit to freeze and eliminate her</li>
+                    <li>Time Electro Spirit to reset her dash when she's mid-animation</li>
+                </ul>
+            </div>
+            
+            <div class="counter-strategy">
+                <h3>Dealing with Cycle Decks</h3>
+                <p>With 2.6 and 2.8 cycle decks dominating the meta, here's how to counter them:</p>
+                <ul>
+                    <li>Save your big spell (Fireball/Poison) for their defensive buildings</li>
+                    <li>Use mini-tanks to absorb damage and create counterpushes</li>
+                    <li>Apply dual-lane pressure to make it harder for them to cycle effectively</li>
+                    <li>Include at least one reset card (Zap/E-Spirit) to counter Ice Spirit plays</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- DECK RECOMMENDATIONS SECTION -->
+        <h2 id="deck-recommendations" class="section-title">Meta Deck <span>Recommendations</span></h2>
+        <div class="counter-strategies">
+            <div class="counter-strategy">
+                <h3>2.8 Boss Bandit Cycle</h3>
+                <p>This fast cycle deck has a 62% win rate in Grand Challenges and leverages Boss Bandit's strength in the current meta.</p>
+                <div class="deck-cards">
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/boss-bandit.png" alt="Boss Bandit">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/ice-spirit.png" alt="Ice Spirit">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/skeletons.png" alt="Skeletons">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/cannon.png" alt="Cannon">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/the-log.png" alt="The Log">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/fireball.png" alt="Fireball">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/bats.png" alt="Bats">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/miner.png" alt="Miner">
+                    </div>
+                </div>
+                <p><strong>Strategy:</strong> Apply constant pressure with Miner + Boss Bandit combos while cycling back to your defensive cards quickly. Use Ice Spirit to support both offense and defense.</p>
+            </div>
+            
+            <div class="counter-strategy">
+                <h3>Skeleton King Goblin Gang</h3>
+                <p>This midrange deck exploits the buffed Goblin Gang and Skeleton King's synergy.</p>
+                <div class="deck-cards">
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/skeleton-king.png" alt="Skeleton King">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/goblin-gang.png" alt="Goblin Gang">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/wall-breakers.png" alt="Wall Breakers">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/guards.png" alt="Guards">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/tornado.png" alt="Tornado">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/fireball.png" alt="Fireball">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/the-log.png" alt="The Log">
+                    </div>
+                    <div class="deck-card">
+                        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=60,h=60,format=auto/static/img/cards/v4-aba2f5ae/bomber.png" alt="Bomber">
+                    </div>
+                </div>
+                <p><strong>Strategy:</strong> Defend with Goblin Gang and Guards, build up a Skeleton King charge, then launch a powerful push with Wall Breakers in the opposite lane. Use Tornado to activate King Tower or pull units into your Skeleton King's ability.</p>
+            </div>
+        </div>
+        
+        <div class="newsletter">
+            <div class="newsletter-content">
+                <h2>Stay Ahead of the Meta</h2>
+                <p>Subscribe to our newsletter and be the first to know about meta shifts, balance changes, and pro strategies.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="footer-logo">
+                <h3>RoyaleMeta<span>.fun</span></h3>
+                <p>The ultimate resource hub for Clash Royale players. Get the latest meta decks, tier lists, strategies, and guides.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="deck.html">Deck</a></li>
+                    <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+                    <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                    <li><a href="clash-royale-advanced-strategies-guide.html">Strategies</a></li>
+                    <li><a href="clash-royale-news-updates.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Deck Builder</a></li>
+                    <li><a href="#">Card Calculator</a></li>
+                    <li><a href="#">Win Rate Tracker</a></li>
+                    <li><a href="#">Pro Player Profiles</a></li>
+                    <li><a href="#">Tournament Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RoyaleMeta.fun. All rights reserved. Not affiliated with Supercell.</p>
+            <p>Clash Royale and its content are trademarks and copyrights of Supercell.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
