@@ -1,0 +1,312 @@
+<html>
+    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+    <!-- SEO META -->
+    <title>Clash Royale Profile | RoyaleMeta.fun</title>
+    <meta name="description" content="Check your Clash Royale profile stats instantly! Enter your player tag to see your deck, clan info, trophies, wins, and more. Fast & accurate data from RoyaleMeta." />
+    <meta name="keywords" content="Clash Royale, profile, stats, deck, clan, trophies, wins, losses, player tag, RoyaleMeta" />
+    <meta name="author" content="RoyaleMeta.fun Team" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="RoyaleMeta.fun 2025" />
+    <link rel="canonical" href="https://royalemeta.fun/profile.html" />
+    <link rel="alternate" hreflang="en" href="https://royalemeta.fun/profile.html" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://royalemeta.fun/sitemap.xml" />
+  
+    <!-- OPEN GRAPH META -->
+    <meta property="og:title" content="Clash Royale Profile | RoyaleMeta.fun" />
+    <meta property="og:description" content="Check your Clash Royale profile, deck, trophies, clan, and more. Just enter your player tag to get started!" />
+    <meta property="og:image" content="https://royalemeta.fun/logo1.jpg" />
+    <meta property="og:url" content="https://royalemeta.fun/profile.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RoyaleMeta" />
+    <meta property="og:locale" content="en_US" />
+  
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clash Royale Profile | RoyaleMeta.fun" />
+    <meta name="twitter:description" content="Explore your Clash Royale profile instantly. Enter your player tag and view all your stats now!" />
+    <meta name="twitter:image" content="https://royalemeta.fun/logo1.jpg" />
+    <meta name="twitter:site" content="@royale_meta" />
+    <meta name="twitter:creator" content="@royale_meta" />
+  
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Clash Royale Profile",
+      "url": "https://royalemeta.fun/profile.html",
+      "description": "Check your Clash Royale profile stats instantly, including deck, clan, trophies and more using your player tag.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "RoyaleMeta",
+        "url": "https://royalemeta.fun",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://royalemeta.fun/logo1.jpg"
+        }
+      }
+    }
+    </script>
+  
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RoyaleMeta",
+      "url": "https://royalemeta.fun",
+      "logo": "https://royalemeta.fun/logo1.jpg",
+      "sameAs": [
+        "https://twitter.com/royale_meta",
+        "https://www.youtube.com/@royalemeta",
+        "https://tiktok.com/@royalemeta"
+      ]
+    }
+    </script>
+  
+    <!-- FAVICON -->
+    <link rel="icon" href="logo1.jpg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="logo1.jpg" />
+  
+    <!-- STYLES & FONTS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+  <style>
+    .profile-section {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-lg) auto;
+      max-width: 600px;
+      box-shadow: var(--shadow-card);
+    }
+    .profile-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: var(--spacing-md);
+    }
+    .profile-form input {
+      flex: 1;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      font-size: 1.2rem;
+    }
+    .profile-form button {
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .profile-form button:hover {
+      background: var(--secondary);
+    }
+    .profile-error {
+      color: var(--accent-red);
+      margin-bottom: 10px;
+    }
+    .profile-data {
+      margin-top: var(--spacing-md);
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #222;
+    }
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-info h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .profile-info .clan {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    .profile-stats {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .profile-stat {
+      background: var(--bg-light);
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .profile-stat .label {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+    .profile-stat .value {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .profile-deck {
+      margin-top: 20px;
+    }
+    .deck-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .deck-card {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: #222;
+    }
+    .deck-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="logo" />
+        <h1>RoyaleMeta<span>.fun</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="popular-decks.html">Popular Decks</a></li>
+          <li><a href="deck.html">Deck</a></li>
+          <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+          <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+          <li><a href="clash-royale-strategies-guide.html">Strategies</a></li>
+          <li><a href="clash-royale-news-updates.html">News</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>📋 Clash Royale <span>Profile</span></h2>
+        <p>Enter your player tag to view your deck, clan, wins, and more!</p>
+      </div>
+      <div class="hero-image">
+        <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/royal-recruits.png" alt="Clash Royale Profile" />
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="profile-section">
+    <form class="profile-form" id="profileForm" autocomplete="off">
+      <input type="text" id="playerTag" placeholder="Enter your tag (#XXXXXX)" maxlength="15" required />
+      <button type="submit"><i class="fas fa-search"></i> Search</button>
+    </form>
+    <div class="profile-error" id="profileError" style="display: none;"></div>
+    <div class="profile-data" id="profileData"></div>
+  </section>
+  <div class="profile-queue-info" style="margin-top: 20px; text-align: center; background: #fff3cd; padding: 15px; border-radius: 12px; border: 1px solid #ffeeba; color: #856404;">
+    <p style="margin: 0 0 10px;">⚠️ The profile may not load instantly — you are currently in queue. Join our Discord to speed it up!</p>
+    <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 20px; background: #5865F2; color: white; border-radius: 8px; font-weight: 600; text-decoration: none;">
+      🚀 Join Discord for Priority Access
+    </a>
+  </div>
+  
+  <script>
+    const form = document.getElementById("profileForm");
+    const errorDiv = document.getElementById("profileError");
+    const dataDiv = document.getElementById("profileData");
+  
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      errorDiv.style.display = "none";
+      dataDiv.innerHTML = "";
+      let tag = document.getElementById("playerTag").value.trim().toUpperCase();
+      if (tag.startsWith("#")) tag = tag.substring(1);
+      if (!tag.match(/^[0289PYLQGRJCUV]+$/i)) {
+        errorDiv.textContent = "Invalid tag. Only valid characters allowed.";
+        errorDiv.style.display = "block";
+        return;
+      }
+  
+      try {
+        const res = await fetch(`http://localhost:3001/api/profile/${tag}`);
+        if (!res.ok) throw new Error("Tag not found or API error.");
+        const player = await res.json();
+        renderProfile(player);
+      } catch (err) {
+        errorDiv.textContent = err.message;
+        errorDiv.style.display = "block";
+      }
+    });
+  
+    function renderProfile(player) {
+      let clan = player.clan
+        ? `<div class="clan">Clan: <b>${player.clan.name}</b> (${player.clan.tag})</div>`
+        : '<div class="clan">No clan</div>';
+      let deck = "";
+      if (player.currentDeck && player.currentDeck.length) {
+        deck =
+          '<div class="profile-deck"><b>Current Deck:</b><div class="deck-cards">' +
+          player.currentDeck
+            .map(
+              (card) =>
+                `<div class="deck-card"><img src="https://cdn.royaleapi.com/static/img/cards-150/${card.id}.png" alt="${card.name}"></div>`
+            )
+            .join("") +
+          "</div></div>";
+      }
+      dataDiv.innerHTML = `
+        <div class="profile-header">
+          <div class="profile-avatar"><img src="https://cdn.royaleapi.com/static/img/badge/${
+            player.badges && player.badges[0] ? player.badges[0].id : "default"
+          }.png" alt="Avatar"></div>
+          <div class="profile-info">
+            <h2>${player.name} <span style="font-size:1rem;color:#888;">#${player.tag}</span></h2>
+            ${clan}
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div class="profile-stat"><div class="label">Level</div><div class="value">${player.expLevel}</div></div>
+          <div class="profile-stat"><div class="label">Wins</div><div class="value">${player.wins}</div></div>
+          <div class="profile-stat"><div class="label">Losses</div><div class="value">${player.losses}</div></div>
+          <div class="profile-stat"><div class="label">Trophies</div><div class="value">${player.trophies}</div></div>
+        </div>
+        ${deck}
+      `;
+    }
+  </script>
+  
+</body>
+</html>

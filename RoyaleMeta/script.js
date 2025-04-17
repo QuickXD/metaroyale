@@ -7,11 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('nav ul');
 
     if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            this.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
         });
     }
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
 
     // Interactive Deck Builder
     const openDeckBuilderBtn = document.getElementById('open-deck-builder');

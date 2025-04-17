@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- CORE SETUP -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO BASE -->
+  <title>Best Clash Royale Decks for Your Arena | RoyaleMeta.fun</title>
+  <meta name="description" content="Discover the most powerful Clash Royale decks tailored to your arena level. Get personalized deck recommendations and win more battles in 2025!" />
+  <meta name="keywords" content="Clash Royale decks 2025, arena decks, best decks for Arena 10, meta decks, top clash royale decks, custom clash royale decks, free to play decks, win rate decks" />
+  <meta name="author" content="RoyaleMeta.fun" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="en" />
+  <link rel="canonical" href="https://royalemeta.fun/deck.html" />
+
+  <!-- PERFORMANCE & MOBILE -->
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="RoyaleMeta" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="application-name" content="RoyaleMeta" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preload" href="logo1.jpg" as="image" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="logo1.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="logo1.jpg" />
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Best Clash Royale Decks for Every Arena | RoyaleMeta.fun" />
+  <meta property="og:description" content="Win more games with personalized Clash Royale decks tailored to your arena and card preferences. Updated daily with meta insights!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://royalemeta.fun/deck.html" />
+  <meta property="og:image" content="https://royalemeta.fun/logo1.jpg" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Clash Royale Arena Decks | RoyaleMeta.fun" />
+  <meta name="twitter:description" content="Find the perfect deck based on your current arena. Daily updates, win rates, and counter strategies included." />
+  <meta name="twitter:image" content="https://royalemeta.fun/logo1.jpg" />
+  <meta name="twitter:site" content="@royale_meta" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- SCRIPTS -->  
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Arena Decks – Clash Royale",
+    "url": "https://royalemeta.fun/deck.html",
+    "description": "Discover optimal Clash Royale decks for every arena level. Built using real-time stats, user feedback and expert recommendations.",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "RoyaleMeta",
+      "url": "https://royalemeta.fun",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://royalemeta.fun/logo1.jpg"
+      }
+    }
+  }
+  </script>  
+
+    <style>
+        .deck-advisor {
+            background-color: var(--bg-medium);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--bg-light);
+            background-color: var(--bg-card);
+            color: var(--text-light);
+            font-size: 1.6rem;
+            transition: var(--transition-normal);
+        }
+
+        .form-group select:focus, .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(82, 113, 255, 0.25);
+        }
+
+        .recommended-decks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .deck-card-container {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-normal);
+            display: none;
+        }
+
+        .deck-card-container.visible {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .deck-header {
+            background: var(--gradient-primary);
+            padding: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .deck-header h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .deck-body {
+            padding: var(--spacing-sm);
+        }
+
+        .deck-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .deck-elixir {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .deck-win-rate {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .deck-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .deck-card {
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: var(--transition-fast);
+        }
+
+        .deck-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .deck-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .deck-description {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.4rem;
+        }
+
+        .deck-arena {
+            display: inline-block;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            margin-top: var(--spacing-xs);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: var(--spacing-md);
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-md);
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .card-search-container {
+            position: relative;
+        }
+
+        .card-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-card);
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+            border: 2px solid var(--bg-light);
+            border-top: none;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+
+        .card-suggestion {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .card-suggestion:hover {
+            background-color: var(--bg-light);
+        }
+
+        .card-suggestion img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: var(--spacing-md);
+            display: none;
+        }
+
+        .loading.visible {
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Deck Recommendations for Your Arena",
+      "description": "Find the best Clash Royale decks for your arena. Get personalized recommendations based on your arena level and favorite cards.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "RoyaleMeta.fun",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://royalemeta.fun/logo1.jpg"
+        }
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beginner Arena Decks",
+            "description": "Best decks for Arena 1-5 in Clash Royale"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Intermediate Arena Decks",
+            "description": "Best decks for Arena 6-10 in Clash Royale"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Advanced Arena Decks",
+            "description": "Best decks for Arena 11-16 in Clash Royale"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Expert Arena Decks",
+            "description": "Best decks for Arena 17-22 in Clash Royale"
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="logo">
+                <h1>RoyaleMeta<span>.fun</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="popular-decks.html">Popular Decks</a></li>
+                    <li><a href="deck.html" class="active">Deck</a></li>
+                    <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+                    <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                    <li><a href="clash-royale-strategies-guide.html">Strategies</a></li>
+                    <li><a href="clash-royale-news-updates.html">News</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Deck <span>Advisor</span></h2>
+                <p>Find the perfect decks for your arena and playstyle. Enter your current arena and a preferred card to receive personalized recommendations.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/golden-knight.png" alt="Royal Champion">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="deck-advisor">
+            <h2 class="section-title">Find Your Ideal Deck</h2>
+            <form id="deck-advisor-form">
+                <div class="form-group">
+                    <label for="arena-select">Your arena:</label>
+                    <select id="arena-select" required>
+                        <option value="" disabled selected>Select your arena</option>
+                        <option value="1">Arena 1: Goblin Stadium</option>
+                        <option value="2">Arena 2: Bone Pit</option>
+                        <option value="3">Arena 3: Barbarian Bowl</option>
+                        <option value="4">Arena 4: P.E.K.K.A's Playhouse</option>
+                        <option value="5">Arena 5: Builder's Workshop</option>
+                        <option value="6">Arena 6: Spell Valley</option>
+                        <option value="7">Arena 7: Royal Arena</option>
+                        <option value="8">Arena 8: Frozen Peak</option>
+                        <option value="9">Arena 9: Jungle Arena</option>
+                        <option value="10">Arena 10: Hog Mountain</option>
+                        <option value="11">Arena 11: Electro Valley</option>
+                        <option value="12">Arena 12: Spooky Town</option>
+                        <option value="13">Arena 13: Rascals' Hideout</option>
+                        <option value="14">Arena 14: Serenity Peak</option>
+                        <option value="15">Arena 15: Challenger I</option>
+                        <option value="16">Arena 16: Challenger II</option>
+                        <option value="17">Arena 17: Challenger III</option>
+                        <option value="18">Arena 18: Master I</option>
+                        <option value="19">Arena 19: Master II</option>
+                        <option value="20">Arena 20: Master III</option>
+                        <option value="21">Arena 21: Champion League</option>
+                        <option value="22">Arena 22: Ultimate League</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="card-search">Favorite card (optional):</label>
+                    <div class="card-search-container">
+                        <input type="text" id="card-search" placeholder="Search for a card...">
+                        <div class="card-suggestions" id="card-suggestions"></div>
+                    </div>
+                    <input type="hidden" id="selected-card-id">
+                </div>
+                <button type="submit" class="btn btn-primary">Find Decks</button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Searching for the best decks...</p>
+            </div>
+
+            <div class="no-results" id="no-results">
+                <h3>No decks found</h3>
+                <p>Try selecting a different arena or card.</p>
+            </div>
+
+            <div class="recommended-decks" id="recommended-decks"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('nav ul');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Card database
+            const cards = [
+                { id: 1, name: "Knight", image: "https://cdn.royaleapi.com/static/img/cards-150/knight.png?t=e7c50ff0c", elixir: 3 },
+                { id: 2, name: "Archers", image: "https://cdn.royaleapi.com/static/img/cards-150/archers.png?t=e7c50ff0c", elixir: 3 },
+                { id: 3, name: "Giant", image: "https://cdn.royaleapi.com/static/img/cards-150/giant.png?t=e7c50ff0c", elixir: 5 },
+                { id: 4, name: "Fireball", image: "https://cdn.royaleapi.com/static/img/cards-150/fireball.png?t=e7c50ff0c", elixir: 4 },
+                { id: 5, name: "Skeletons", image: "https://cdn.royaleapi.com/static/img/cards-150/skeletons.png?t=e7c50ff0c", elixir: 1 },
+                { id: 6, name: "Barbarians", image: "https://cdn.royaleapi.com/static/img/cards-150/barbarians.png?t=e7c50ff0c", elixir: 5 },
+                { id: 7, name: "Minions", image: "https://cdn.royaleapi.com/static/img/cards-150/minions.png?t=e7c50ff0c", elixir: 3 },
+                { id: 8, name: "Spear Goblins", image: "https://cdn.royaleapi.com/static/img/cards-150/spear-goblins.png?t=e7c50ff0c", elixir: 2 },
+                { id: 9, name: "Goblins", image: "https://cdn.royaleapi.com/static/img/cards-150/goblins.png?t=e7c50ff0c", elixir: 2 },
+                { id: 10, name: "Valkyrie", image: "https://cdn.royaleapi.com/static/img/cards-150/valkyrie.png?t=e7c50ff0c", elixir: 4 },
+                { id: 11, name: "Skeleton Army", image: "https://cdn.royaleapi.com/static/img/cards-150/skeleton-army.png?t=e7c50ff0c", elixir: 3 },
+                { id: 12, name: "Bomber", image: "https://cdn.royaleapi.com/static/img/cards-150/bomber.png?t=e7c50ff0c", elixir: 2 },
+                { id: 13, name: "Musketeer", image: "https://cdn.royaleapi.com/static/img/cards-150/musketeer.png?t=e7c50ff0c", elixir: 4 },
+                { id: 14, name: "Baby Dragon", image: "https://cdn.royaleapi.com/static/img/cards-150/baby-dragon.png?t=e7c50ff0c", elixir: 4 },
+                { id: 15, name: "Prince", image: "https://cdn.royaleapi.com/static/img/cards-150/prince.png?t=e7c50ff0c", elixir: 5 },
+                { id: 16, name: "Wizard", image: "https://cdn.royaleapi.com/static/img/cards-150/wizard.png?t=e7c50ff0c", elixir: 5 },
+                { id: 17, name: "Mini P.E.K.K.A", image: "https://cdn.royaleapi.com/static/img/cards-150/mini-pekka.png?t=e7c50ff0c", elixir: 4 },
+                { id: 18, name: "Ice Spirit", image: "https://cdn.royaleapi.com/static/img/cards-150/ice-spirit.png?t=e7c50ff0c", elixir: 1 },
+                { id: 19, name: "Mega Knight", image: "https://cdn.royaleapi.com/static/img/cards-150/mega-knight.png?t=e7c50ff0c", elixir: 7 },
+                { id: 20, name: "Electro Giant", image: "https://cdn.royaleapi.com/static/img/cards-150/electro-giant.png?t=e7c50ff0c", elixir: 8 },
+                { id: 21, name: "Goblin Drill", image: "https://cdn.royaleapi.com/static/img/cards-150/goblin-drill.png?t=e7c50ff0c", elixir: 4 },
+                { id: 22, name: "Royal Champion", image: "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/golden-knight.png", elixir: 6 },
+                { id: 23, name: "Tornado", image: "https://cdn.royaleapi.com/static/img/cards-150/tornado.png?t=e7c50ff0c", elixir: 3 },
+                { id: 24, name: "Lightning", image: "https://cdn.royaleapi.com/static/img/cards-150/lightning.png?t=e7c50ff0c", elixir: 6 },
+                { id: 25, name: "Cannon", image: "https://cdn.royaleapi.com/static/img/cards-150/cannon.png?t=e7c50ff0c", elixir: 3 },
+                { id: 26, name: "The Log", image: "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/the-log.png", elixir: 2 },
+                { id: 27, name: "Dark Prince", image: "https://cdn.royaleapi.com/static/img/cards-150/dark-prince.png?t=e7c50ff0c", elixir: 4 },
+                { id: 28, name: "Hog Rider", image: "https://cdn.royaleapi.com/static/img/cards-150/hog-rider.png?t=e7c50ff0c", elixir: 4 },
+                { id: 29, name: "Earthquake", image: "https://cdn.royaleapi.com/static/img/cards-150/earthquake.png?t=e7c50ff0c", elixir: 3 },
+                { id: 30, name: "Balloon", image: "https://cdn.royaleapi.com/static/img/cards-150/balloon.png?t=e7c50ff0c", elixir: 5 },
+                { id: 31, name: "Inferno Tower", image: "https://cdn.royaleapi.com/static/img/cards-150/inferno-tower.png?t=e7c50ff0c", elixir: 5 },
+                { id: 32, name: "Rocket", image: "https://cdn.royaleapi.com/static/img/cards-150/rocket.png?t=e7c50ff0c", elixir: 6 },
+                { id: 33, name: "Goblin Barrel", image: "https://cdn.royaleapi.com/static/img/cards-150/goblin-barrel.png?t=e7c50ff0c", elixir: 3 },
+                { id: 34, name: "Freeze", image: "https://cdn.royaleapi.com/static/img/cards-150/freeze.png?t=e7c50ff0c", elixir: 4 },
+                { id: 35, name: "P.E.K.K.A", image: "https://cdn.royaleapi.com/static/img/cards-150/pekka.png?t=e7c50ff0c", elixir: 7 },
+                { id: 36, name: "Lava Hound", image: "https://cdn.royaleapi.com/static/img/cards-150/lava-hound.png?t=e7c50ff0c", elixir: 7 },
+                { id: 37, name: "Zap", image: "https://cdn.royaleapi.com/static/img/cards-150/zap.png?t=e7c50ff0c", elixir: 2 },
+                { id: 38, name: "Miner", image: "https://cdn.royaleapi.com/static/img/cards-150/miner.png?t=e7c50ff0c", elixir: 3 },
+                { id: 39, name: "Poison", image: "https://cdn.royaleapi.com/static/img/cards-150/poison.png?t=e7c50ff0c", elixir: 4 },
+                { id: 40, name: "Ice Wizard", image: "https://cdn.royaleapi.com/static/img/cards-150/ice-wizard.png?t=e7c50ff0c", elixir: 3 },
+                // Add these cards to the "cards" array in the card database
+{ id: 41, name: "Giant Skeleton", image: "https://cdn.royaleapi.com/static/img/cards-150/giant-skeleton.png?t=e7c50ff0c", elixir: 6 },
+{ id: 42, name: "Golem", image: "https://cdn.royaleapi.com/static/img/cards-150/golem.png?t=e7c50ff0c", elixir: 8 },
+{ id: 43, name: "Royal Giant", image: "https://cdn.royaleapi.com/static/img/cards-150/royal-giant.png?t=e7c50ff0c", elixir: 6 },
+{ id: 44, name: "Three Musketeers", image: "https://cdn.royaleapi.com/static/img/cards-150/three-musketeers.png?t=e7c50ff0c", elixir: 9 },
+{ id: 45, name: "Sparky", image: "https://cdn.royaleapi.com/static/img/cards-150/sparky.png?t=e7c50ff0c", elixir: 6 },
+{ id: 46, name: "Bowler", image: "https://cdn.royaleapi.com/static/img/cards-150/bowler.png?t=e7c50ff0c", elixir: 5 },
+{ id: 47, name: "Executioner", image: "https://cdn.royaleapi.com/static/img/cards-150/executioner.png?t=e7c50ff0c", elixir: 5 },
+{ id: 48, name: "Electro Wizard", image: "https://cdn.royaleapi.com/static/img/cards-150/electro-wizard.png?t=e7c50ff0c", elixir: 4 },
+{ id: 49, name: "Guards", image: "https://cdn.royaleapi.com/static/img/cards-150/guards.png?t=e7c50ff0c", elixir: 3 },
+{ id: 50, name: "Graveyard", image: "https://cdn.royaleapi.com/static/img/cards-150/graveyard.png?t=e7c50ff0c", elixir: 5 },
+{ id: 51, name: "Royal Ghost", image: "https://cdn.royaleapi.com/static/img/cards-150/royal-ghost.png?t=e7c50ff0c", elixir: 3 },
+{ id: 52, name: "Magic Archer", image: "https://cdn.royaleapi.com/static/img/cards-150/magic-archer.png?t=e7c50ff0c", elixir: 4 },
+{ id: 53, name: "Night Witch", image: "https://cdn.royaleapi.com/static/img/cards-150/night-witch.png?t=e7c50ff0c", elixir: 4 },
+{ id: 54, name: "Bandit", image: "https://cdn.royaleapi.com/static/img/cards-150/bandit.png?t=e7c50ff0c", elixir: 3 },
+{ id: 55, name: "Ram Rider", image: "https://cdn.royaleapi.com/static/img/cards-150/ram-rider.png?t=e7c50ff0c", elixir: 5 },
+{ id: 56, name: "Fisherman", image: "https://cdn.royaleapi.com/static/img/cards-150/fisherman.png?t=e7c50ff0c", elixir: 3 },
+{ id: 57, name: "Mother Witch", image: "https://cdn.royaleapi.com/static/img/cards-150/mother-witch.png?t=e7c50ff0c", elixir: 4 },
+{ id: 58, name: "Electro Dragon", image: "https://cdn.royaleapi.com/static/img/cards-150/electro-dragon.png?t=e7c50ff0c", elixir: 5 },
+{ id: 59, name: "Firecracker", image: "https://cdn.royaleapi.com/static/img/cards-150/firecracker.png?t=e7c50ff0c", elixir: 3 },
+{ id: 60, name: "Royal Delivery", image: "https://cdn.royaleapi.com/static/img/cards-150/royal-delivery.png?t=e7c50ff0c", elixir: 3 },
+{ id: 61, name: "Elixir Golem", image: "https://cdn.royaleapi.com/static/img/cards-150/elixir-golem.png?t=e7c50ff0c", elixir: 3 },
+{ id: 62, name: "Battle Healer", image: "https://cdn.royaleapi.com/static/img/cards-150/battle-healer.png?t=e7c50ff0c", elixir: 4 },
+{ id: 63, name: "Skeleton Dragons", image: "https://cdn.royaleapi.com/static/img/cards-150/skeleton-dragons.png?t=e7c50ff0c", elixir: 4 },
+{ id: 64, name: "Electro Spirit", image: "https://cdn.royaleapi.com/static/img/cards-150/electro-spirit.png?t=e7c50ff0c", elixir: 1 },
+{ id: 65, name: "Fire Spirit", image: "https://cdn.royaleapi.com/static/img/cards-150/fire-spirit.png?t=e7c50ff0c", elixir: 1 },
+{ id: 66, name: "Royal Recruits", image: "https://cdn.royaleapi.com/static/img/cards-150/royal-recruits.png?t=e7c50ff0c", elixir: 7 },
+{ id: 67, name: "Rascals", image: "https://cdn.royaleapi.com/static/img/cards-150/rascals.png?t=e7c50ff0c", elixir: 5 },
+{ id: 68, name: "Cannon Cart", image: "https://cdn.royaleapi.com/static/img/cards-150/cannon-cart.png?t=e7c50ff0c", elixir: 5 },
+{ id: 69, name: "Wall Breakers", image: "https://cdn.royaleapi.com/static/img/cards-150/wall-breakers.png?t=e7c50ff0c", elixir: 2 },
+{ id: 70, name: "Royal Hogs", image: "https://cdn.royaleapi.com/static/img/cards-150/royal-hogs.png?t=e7c50ff0c", elixir: 5 },
+{ id: 71, name: "Goblin Cage", image: "https://cdn.royaleapi.com/static/img/cards-150/goblin-cage.png?t=e7c50ff0c", elixir: 4 },
+{ id: 72, name: "Goblin Giant", image: "https://cdn.royaleapi.com/static/img/cards-150/goblin-giant.png?t=e7c50ff0c", elixir: 6 },
+{ id: 73, name: "Archer Queen", image: "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/archer-queen.png", elixir: 5 },
+{ id: 74, name: "Monk", image: "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/monk.png", elixir: 5 },
+{ id: 75, name: "Phoenix", image: "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/phoenix.png", elixir: 4 },
+{ id: 76, name: "Rocket", image: "https://cdn.royaleapi.com/static/img/cards-150/rocket.png?t=e7c50ff0c", elixir: 6 },
+{ id: 77, name: "Tesla", image: "https://cdn.royaleapi.com/static/img/cards-150/tesla.png?t=e7c50ff0c", elixir: 4 },
+{ id: 78, name: "Elixir Collector", image: "https://cdn.royaleapi.com/static/img/cards-150/elixir-collector.png?t=e7c50ff0c", elixir: 6 },
+{ id: 79, name: "X-Bow", image: "https://cdn.royaleapi.com/static/img/cards-150/x-bow.png?t=e7c50ff0c", elixir: 6 },
+{ id: 80, name: "Mortar", image: "https://cdn.royaleapi.com/static/img/cards-150/mortar.png?t=e7c50ff0c", elixir: 4 }
+            ];
+
+            // Deck database by arena
+            const decks = {
+                // Arena 1-5 (beginners)
+                beginners: [
+                    {
+                        name: "Giant Beatdown",
+                        cards: [3, 4, 10, 13, 14, 11, 8, 12],
+                        elixir: 3.5,
+                        winRate: "62%",
+                        description: "A classic deck with Giant as the main card to attack enemy towers.",
+                        minArena: 1,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Aggressive Prince",
+                        cards: [15, 10, 4, 14, 1, 5, 8, 12],
+                        elixir: 3.4,
+                        winRate: "58%",
+                        description: "Uses Prince for fast and powerful attacks, supported by low-cost cards.",
+                        minArena: 1,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Giant Beatdown",
+                        cards: [3, 4, 10, 13, 14, 11, 8, 12],
+                        elixir: 3.5,
+                        winRate: "64%",
+                        description: "A classic deck with Giant as the main card for attacking enemy towers.",
+                        minArena: 3,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Battle Ram Cycle",
+                        cards: [54, 10, 4, 13, 5, 18, 25, 37],
+                        elixir: 3.3,
+                        winRate: "61%",
+                        description: "A fast cycle deck with Battle Ram as the main win condition.",
+                        minArena: 4,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Giant Beatdown",
+                        cards: [3, 16, 4, 13, 14, 11, 8, 12],
+                        elixir: 3.6,
+                        winRate: "63%",
+                        description: "A powerful beatdown deck with Giant for Arena 4.",
+                        minArena: 4,
+                        maxArena: 5
+                    },
+                    {
+                        name: "RETRO Giant Hog Musk",
+                        cards: [3, 28, 13, 4, 10, 11, 8, 37],
+                        elixir: 3.5,
+                        winRate: "65%",
+                        description: "A retro deck with Giant, Hog Rider and Musketeer for versatile attacks.",
+                        minArena: 5,
+                        maxArena: 5
+                    },
+                    // Predefined decks for Arena 4-5
+                    {
+                        name: "Prince & Baby Dragon",
+                        cards: [15, 14, 10, 4, 37, 8, 12, 13],
+                        elixir: 3.6,
+                        winRate: "63%",
+                        description: "A classic deck with Prince and Baby Dragon for powerful attacks.",
+                        minArena: 4,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Mini PEKKA Control",
+                        cards: [17, 4, 12, 8, 5, 10, 3, 7],
+                        elixir: 3.0,
+                        winRate: "59%",
+                        description: "Usa Mini PEKKA per difesa e contrattacco con Giant come tank.",
+                        minArena: 4,
+                        maxArena: 5
+                    }
+                ],
+                // Arena 17-22 (expert)
+                expert: [
+                    {
+                        name: "Archer Queen Mega Knight Wall Breakers",
+                        cards: [73, 19, 69, 10, 26, 5, 64, 37],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A powerful deck with Archer Queen, Mega Knight and Wall Breakers for Arena 17.",
+                        minArena: 17,
+                        maxArena: 17
+                    },
+                    {
+                        name: "Monk Firecracker Hog Cycle",
+                        cards: [74, 59, 28, 26, 5, 64, 25, 4],
+                        elixir: 3.1,
+                        winRate: "71%",
+                        description: "A cycle deck with Monk, Firecracker and Hog Rider for Arena 18.",
+                        minArena: 18,
+                        maxArena: 18
+                    },
+                    {
+                        name: "PEKKA Zap Bridge Spam",
+                        cards: [35, 37, 54, 39, 27, 40, 48, 13],
+                        elixir: 4.0,
+                        winRate: "73%",
+                        description: "A classic PEKKA Bridge Spam deck with Zap for Arena 19 and 21+.",
+                        minArena: 19,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Double Elixir Loon Freeze",
+                        cards: [30, 34, 78, 14, 4, 11, 13, 7],
+                        elixir: 4.1,
+                        winRate: "70%",
+                        description: "A Balloon Freeze deck optimized for double elixir in Arena 20.",
+                        minArena: 20,
+                        maxArena: 20
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Bait",
+                        cards: [22, 33, 26, 31, 32, 11, 5, 38],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A bait deck featuring Royal Champion as a powerful defensive card that transitions into offense.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Electro Giant Lightning",
+                        cards: [20, 24, 23, 27, 18, 5, 40, 37],
+                        elixir: 3.9,
+                        winRate: "70%",
+                        description: "Uses Electro Giant as the main win condition with Lightning to clear defenses.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Lavaloon",
+                        cards: [36, 30, 7, 38, 37, 23, 4, 26],
+                        elixir: 4.1,
+                        winRate: "71%",
+                        description: "A powerful air attack deck with Lava Hound tanking for Balloon, difficult to defend against.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Goblin Drill Cycle",
+                        cards: [21, 10, 26, 5, 18, 37, 4, 25],
+                        elixir: 2.9,
+                        winRate: "69%",
+                        description: "A fast cycle deck that uses Goblin Drill to apply constant pressure on the opponent.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Control",
+                        cards: [22, 10, 26, 32, 5, 18, 31, 23],
+                        elixir: 3.5,
+                        winRate: "73%",
+                        description: "Uses Prince for fast and powerful attacks, supported by low-cost cards.",
+                        minArena: 1,
+                        maxArena: 5
+                    },
+
+                    // Add these decks to the 'beginners' category
+{
+    name: "Giant Witch Combo",
+    cards: [3, 16, 37, 12, 7, 10, 65, 64],
+    elixir: 3.0,
+    winRate: "61%",
+    description: "A classic deck for starting with a powerful Giant Witch and a variety of other cards.",
+    minArena: 1,
+    maxArena: 5
+},
+{
+    name: "Mini Knight Rush",
+    cards: [1, 17, 4, 12, 5, 8, 9, 37],
+    elixir: 2.8,
+    winRate: "58%",
+    description: "A fast deck with a Mini Knight for quick and powerful attacks.",
+    minArena: 1,
+    maxArena: 5
+},
+{
+    name: "Prince & Baby Dragon",
+    cards: [15, 14, 10, 4, 37, 8, 12, 13],
+    elixir: 3.6,
+    winRate: "63%",
+    description: "A deck with Prince and Baby Dragon for a balanced and aggressive playstyle.",
+    minArena: 1,
+    maxArena: 5
+},
+
+// Add these decks to the 'intermediate' category
+{
+    name: "Royal Giant Control",
+    cards: [43, 16, 10, 13, 4, 37, 31, 12],
+    elixir: 4.0,
+    winRate: "64%",
+    description: "Deck with Royal Giant for control and Prince for aggressive attacks.",
+    minArena: 6,
+    maxArena: 10
+},
+{
+    name: "Executioner Tornado",
+    cards: [47, 23, 28, 4, 26, 18, 25, 5],
+    elixir: 3.3,
+    winRate: "66%",
+    description: "A deck that uses Executioner for powerful attacks and Tornado for defense.",
+    minArena: 6,
+    maxArena: 10
+},
+{
+    name: "Giant Skeleton Graveyard",
+    cards: [41, 50, 37, 4, 14, 13, 8, 65],
+    elixir: 3.8,
+    winRate: "63%",
+    description: "Giant",
+    minArena: 6,
+    maxArena: 10
+},
+{
+    name: "Double Prince Giant",
+    cards: [15, 27, 3, 37, 4, 13, 14, 8],
+    elixir: 4.1,
+    winRate: "65%",
+    description: "Attacchi potenti con entrambi i Prince dietro un Giant come tank.",
+    minArena: 6,
+    maxArena: 10
+},
+
+// Add these decks to the 'advanced' category
+{
+    name: "EGiant Tesla",
+    cards: [20, 77, 5, 64, 26, 4, 23, 12],
+    elixir: 3.4,
+    winRate: "67%",
+    description: "Use electro giant as win condition for winning.",
+    minArena: 11,
+    maxArena: 16
+},
+{
+    name: "Golem Beatdown",
+    cards: [42, 53, 48, 39, 18, 64, 26, 32],
+    elixir: 4.3,
+    winRate: "68%",
+    description: "Heavy golem for tanking",
+    minArena: 11,
+    maxArena: 16
+},
+{
+    name: "Wall Breakers Cycle",
+    cards: [69, 51, 49, 59, 26, 5, 10, 32],
+    elixir: 3.0,
+    winRate: "66%",
+    description: "Fast deck with wallbreakers",
+    minArena: 11,
+    maxArena: 16
+},
+{
+    name: "Three Musketeers Split",
+    cards: [44, 3, 78, 51, 54, 39, 37, 26],
+    elixir: 4.6,
+    winRate: "61%",
+    description: "Strategia di split push con Three Musketeers e Elixir Collector per vantaggio di elixir.",
+    minArena: 11,
+    maxArena: 16
+},
+{
+    name: "Ram Rider Bridge Spam",
+    cards: [55, 54, 27, 48, 39, 5, 37, 51],
+    elixir: 3.6,
+    winRate: "69%",
+    description: "Bridge spam aggressivo con Ram Rider, Bandit e altre unità veloci.",
+    minArena: 11,
+    maxArena: 16
+},
+
+// Add these decks to the 'expert' category
+{
+    name: "Archer Queen Cycle",
+    cards: [73, 28, 29, 10, 64, 5, 77, 26],
+    elixir: 3.1,
+    winRate: "74%",
+    description: "Fast cycle with Archer Queen as the main card for defense and offense.",
+    minArena: 17,
+    maxArena: 22
+},
+{
+    name: "Phoenix Royal Hogs",
+    cards: [75, 70, 26, 29, 5, 64, 4, 49],
+    elixir: 3.4,
+    winRate: "71%",
+    description: "Nuova meta 2025 con Phoenix e Royal Hogs per pressione in entrambe le lane.",
+    minArena: 17,
+    maxArena: 22
+},
+{
+    name: "Monk X-Bow",
+    cards: [74, 79, 77, 50, 26, 25, 5, 64],
+    elixir: 3.6,
+    winRate: "72%",
+    description: "Strategia di assedio con X-Bow protetto da Monk, difesa solida e counterattack.",
+    minArena: 17,
+    maxArena: 22
+},
+{
+    name: "Goblin Giant Sparky",
+    cards: [72, 45, 48, 23, 26, 64, 65, 12],
+    elixir: 3.8,
+    winRate: "70%",
+    description: "Combo potente tra Goblin Giant e Sparky con supporto di spell e unità a basso costo.",
+    minArena: 17,
+    maxArena: 22
+},
+{
+    name: "Triple Champion",
+    cards: [73, 74, 22, 26, 5, 29, 64, 10],
+    elixir: 3.4,
+    winRate: "75%",
+    description: "2025 Meta - triple champion with archer queen, monk and phoenix for a strong defense and offense.",
+    minArena: 17,
+    maxArena: 22
+},
+{
+    name: "Mortar Miner Poison",
+    cards: [80, 38, 39, 49, 26, 5, 64, 59],
+    elixir: 3.0,
+    winRate: "71%",
+    description: "Mortar, miner and poison for a powerful defense and offense.",
+    minArena: 17,
+    maxArena: 22
+},
+
+                    {
+                        name: "Defense & Counter",
+                        cards: [1, 2, 4, 10, 13, 11, 7, 16],
+                        elixir: 3.8,
+                        winRate: "60%",
+                        description: "A balanced deck that defends well and counterattacks when the opponent has spent elixir.",
+                        minArena: 1,
+                        maxArena: 5
+                    },
+                    {
+                        name: "Mini PEKKA Control",
+                        cards: [17, 4, 12, 8, 5, 10, 3, 7],
+                        elixir: 3.0,
+                        winRate: "59%",
+                        description: "Uses PEKKA for defense and creates powerful bridge spam attacks with multiple threats.",
+                        minArena: 11,
+                        maxArena: 16
+                    }
+                ],
+                // Arena 6-10 (intermediate)
+                intermediate: [
+                    {
+                        name: "A6 - Hog Musk Barrel Bait",
+                        cards: [28, 13, 33, 11, 4, 26, 5, 37],
+                        elixir: 3.4,
+                        winRate: "66%",
+                        description: "A bait deck with Hog Rider, Musketeer and Goblin Barrel for Arena 6.",
+                        minArena: 6,
+                        maxArena: 6
+                    },
+                    {
+                        name: "Giant Loon",
+                        cards: [3, 30, 4, 14, 13, 37, 11, 7],
+                        elixir: 3.9,
+                        winRate: "67%",
+                        description: " A strong combination with the giant that permits you to win every game",
+                        minArena: 7,
+                        maxArena: 7
+                    },
+                    {
+                        name: "Giant Double Prince",
+                        cards: [3, 15, 27, 4, 14, 37, 13, 8],
+                        elixir: 4.3,
+                        winRate: "68%",
+                        description: "A classic Giant Double Prince deck for Arena 7.",
+                        minArena: 7,
+                        maxArena: 7
+                    },
+                    {
+                        name: "Giant Hog Musk Beatdown",
+                        cards: [3, 28, 13, 4, 10, 37, 5, 26],
+                        elixir: 3.5,
+                        winRate: "65%",
+                        description: "A beatdown deck with Giant, Hog and Musketeer for Arena 8.",
+                        minArena: 8,
+                        maxArena: 8
+                    },
+                    {
+                        name: "2.8 Hog Dart Cycle",
+                        cards: [28, 49, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.8,
+                        winRate: "69%",
+                        description: "A fast cycle deck with Hog Rider and Dart Goblin for Arena 8.",
+                        minArena: 8,
+                        maxArena: 8
+                    },
+                    {
+                        name: "Royal Recruits Hogs Fireball Bait",
+                        cards: [66, 70, 4, 59, 10, 26, 37, 64],
+                        elixir: 3.8,
+                        winRate: "67%",
+                        description: "A fireball bait deck with Royal Recruits and Royal Hogs for Arena 10.",
+                        minArena: 10,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Hog Cycle",
+                        cards: [28, 4, 10, 13, 5, 25, 18, 12],
+                        elixir: 3.0,
+                        winRate: "65%",
+                        description: "A fast deck that cycles quickly to get back to Hog Rider and constantly attack.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Double Prince",
+                        cards: [15, 27, 3, 4, 16, 11, 14, 13],
+                        elixir: 4.5,
+                        winRate: "63%",
+                        description: "Uses Prince and Dark Prince for powerful attacks with Giant as the tank.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Balloon Freeze",
+                        cards: [30, 34, 14, 4, 11, 13, 7, 37],
+                        elixir: 3.9,
+                        winRate: "64%",
+                        description: "Uses Balloon as the main win condition with Freeze to catch opponents off guard.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Giant Witch",
+                        cards: [3, 16, 10, 4, 37, 11, 7, 13],
+                        elixir: 3.8,
+                        winRate: "62%",
+                        description: "A classic combo with Giant tanking for Witch, who spawns skeletons and deals splash damage.",
+                        minArena: 6,
+                        maxArena: 10
+                    }
+                ],
+                // Arena 11-16 (advanced)
+                advanced: [
+                    {
+                        name: "Mini PEKKA Control",
+                        cards: [17, 4, 12, 8, 5, 10, 3, 7],
+                        elixir: 3.0,
+                        winRate: "59%",
+                        description: "Uses Mini PEKKA for defense and counterpush with Giant as the tank.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "PEKKA Bridge Spam",
+                        cards: [35, 27, 10, 39, 37, 38, 40, 14],
+                        elixir: 4.1,
+                        winRate: "67%",
+                        description: "Uses PEKKA for defense and creates powerful bridge spam attacks with multiple threats.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Miner Poison Control",
+                        cards: [38, 39, 26, 10, 40, 5, 18, 31],
+                        elixir: 3.1,
+                        winRate: "66%",
+                        description: "A control deck that uses Miner and Poison to chip away at towers while defending effectively.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Hog Earthquake",
+                        cards: [28, 29, 10, 40, 18, 5, 25, 37],
+                        elixir: 3.0,
+                        winRate: "68%",
+                        description: "Uses Hog Rider with Earthquake to break through buildings and defensive structures.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Mega Knight Bait",
+                        cards: [19, 33, 10, 31, 26, 37, 11, 38],
+                        elixir: 3.8,
+                        winRate: "67%",
+                        description: "Uses Mega Knight for defense and Goblin Barrel for tower damage, with multiple bait elements.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Balloon Freeze",
+                        cards: [30, 34, 10, 37, 5, 18, 40, 14],
+                        elixir: 3.5,
+                        winRate: "66%",
+                        description: "A surprise attack deck that uses Balloon with Freeze to catch opponents off guard.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Classic LogBait",
+                        cards: [33, 31, 32, 26, 11, 18, 5, 10],
+                        elixir: 3.3,
+                        winRate: "67%",
+                        description: "The famous LogBait deck that uses Goblin Barrel as win condition and bait cards for The Log.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "EGiant Tesla",
+                        cards: [20, 77, 5, 64, 26, 4, 23, 12],
+                        elixir: 3.4,
+                        winRate: "67%",
+                        description: "Use the electro giant as win condition and defend with the tesla.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Golem Beatdown",
+                        cards: [42, 53, 48, 39, 18, 64, 26, 32],
+                        elixir: 4.3,
+                        winRate: "68%",
+                        description: "Heavy golem for tanking with strong support units.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Wall Breakers Cycle",
+                        cards: [69, 51, 49, 59, 26, 5, 10, 32],
+                        elixir: 3.0,
+                        winRate: "66%",
+                        description: "Fast cycle deck with Wall Breakers as win condition.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Three Musketeers Split",
+                        cards: [44, 3, 78, 51, 54, 39, 37, 26],
+                        elixir: 4.6,
+                        winRate: "61%",
+                        description: "Strategia di split push con Three Musketeers e Elixir Collector per vantaggio di elixir.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Ram Rider Bridge Spam",
+                        cards: [55, 54, 27, 48, 39, 5, 37, 51],
+                        elixir: 3.6,
+                        winRate: "69%",
+                        description: "Bridge spam aggressivo con Ram Rider, Bandit e altre unità veloci.",
+                        minArena: 11,
+                        maxArena: 16
+                    }
+                ],
+                // Arena 17-22 (expert)
+                expert: [
+                    {
+                        name: "Archer Queen Mega Knight Wall Breakers",
+                        cards: [73, 19, 69, 10, 26, 5, 64, 37],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A powerful deck with Archer Queen, Mega Knight and Wall Breakers for Arena 17.",
+                        minArena: 17,
+                        maxArena: 17
+                    },
+                    {
+                        name: "Monk Firecracker Hog Cycle",
+                        cards: [74, 59, 28, 26, 5, 64, 25, 4],
+                        elixir: 3.1,
+                        winRate: "71%",
+                        description: "A cycle deck with Monk, Firecracker and Hog Rider for Arena 18.",
+                        minArena: 18,
+                        maxArena: 18
+                    },
+                    {
+                        name: "PEKKA Zap Bridge Spam",
+                        cards: [35, 37, 54, 39, 27, 40, 48, 13],
+                        elixir: 4.0,
+                        winRate: "73%",
+                        description: "A classic PEKKA Bridge Spam deck with Zap for Arena 19 and 21+.",
+                        minArena: 19,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Double Elixir Loon Freeze",
+                        cards: [30, 34, 78, 14, 4, 11, 13, 7],
+                        elixir: 4.1,
+                        winRate: "70%",
+                        description: "A Balloon Freeze deck optimized for double elixir in Arena 20.",
+                        minArena: 20,
+                        maxArena: 20
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Bait",
+                        cards: [22, 33, 26, 31, 32, 11, 5, 38],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A bait deck featuring Royal Champion as a powerful defensive card that transitions into offense.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Electro Giant Lightning",
+                        cards: [20, 24, 23, 27, 18, 5, 40, 37],
+                        elixir: 3.9,
+                        winRate: "70%",
+                        description: "Uses Electro Giant as the main win condition with Lightning to clear defenses.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Lavaloon",
+                        cards: [36, 30, 7, 38, 37, 23, 4, 26],
+                        elixir: 4.1,
+                        winRate: "71%",
+                        description: "A powerful air attack deck with Lava Hound tanking for Balloon, difficult to defend against.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Goblin Drill Cycle",
+                        cards: [21, 10, 26, 5, 18, 37, 4, 25],
+                        elixir: 2.9,
+                        winRate: "69%",
+                        description: "A fast cycle deck that uses Goblin Drill to apply constant pressure on the opponent.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Control",
+                        cards: [22, 10, 26, 32, 5, 18, 31, 23],
+                        elixir: 3.5,
+                        winRate: "73%",
+                        description: "Uses both princes to create devastating attacks that are difficult to stop.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Valkyrie Control",
+                        cards: [10, 17, 4, 13, 14, 5, 8, 26],
+                        elixir: 3.3,
+                        winRate: "61%",
+                        description: "A control deck that uses Valkyrie for defense and creates effective counterattacks.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "Giant Witch",
+                        cards: [3, 16, 10, 4, 37, 11, 8, 25],
+                        elixir: 3.6,
+                        winRate: "62%",
+                        description: "Combines Giant with Wizard for a powerful push with splash damage support.",
+                        minArena: 6,
+                        maxArena: 10
+                    },
+                    {
+                        name: "PEKKA Bridge Spam",
+                        cards: [35, 14, 4, 37, 10, 8, 13, 27],
+                        elixir: 4.0,
+                        winRate: "64%",
+                        description: "Uses PEKKA for defense and creates quick bridge spam attacks with Dark Prince and other cards.",
+                        minArena: 6,
+                        maxArena: 10
+                    }
+                ],
+                // Arena 11-16 (advanced)
+                advanced: [
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Mega Knight Bait",
+                        cards: [19, 33, 10, 31, 26, 37, 11, 38],
+                        elixir: 3.8,
+                        winRate: "67%",
+                        description: "Uses Mega Knight for defense and Goblin Barrel for tower damage, with multiple bait elements.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Balloon Freeze",
+                        cards: [30, 34, 10, 37, 5, 18, 40, 14],
+                        elixir: 3.5,
+                        winRate: "66%",
+                        description: "A surprise attack deck that uses Balloon with Freeze to catch opponents off guard.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Hog Earthquake",
+                        cards: [28, 29, 4, 10, 18, 5, 25, 13],
+                        elixir: 3.0,
+                        winRate: "68%",
+                        description: "Uses Hog Rider with Earthquake to break through buildings and defensive structures.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Miner Poison Control",
+                        cards: [38, 39, 26, 10, 5, 18, 31, 40],
+                        elixir: 3.1,
+                        winRate: "65%",
+                        description: "A control deck that uses Miner and Poison for consistent tower damage while defending well.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "PEKKA Bridge Spam",
+                        cards: [35, 27, 4, 37, 28, 13, 38, 26],
+                        elixir: 3.9,
+                        winRate: "69%",
+                        description: "Uses PEKKA for defense and creates powerful bridge spam attacks with multiple threats.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Classic LogBait",
+                        cards: [33, 31, 32, 26, 11, 18, 5, 10],
+                        elixir: 3.3,
+                        winRate: "67%",
+                        description: "The famous LogBait deck that uses Goblin Barrel as win condition and bait cards for The Log.",
+                        minArena: 11,
+                        maxArena: 16
+                    }
+                ],
+                // Arena 17-22 (expert)
+                expert: [
+                    {
+                        name: "Archer Queen Mega Knight Wall Breakers",
+                        cards: [73, 19, 69, 10, 26, 5, 64, 37],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A powerful deck with Archer Queen, Mega Knight and Wall Breakers for Arena 17.",
+                        minArena: 17,
+                        maxArena: 17
+                    },
+                    {
+                        name: "Monk Firecracker Hog Cycle",
+                        cards: [74, 59, 28, 26, 5, 64, 25, 4],
+                        elixir: 3.1,
+                        winRate: "71%",
+                        description: "A cycle deck with Monk, Firecracker and Hog Rider for Arena 18.",
+                        minArena: 18,
+                        maxArena: 18
+                    },
+                    {
+                        name: "PEKKA Zap Bridge Spam",
+                        cards: [35, 37, 54, 39, 27, 40, 48, 13],
+                        elixir: 4.0,
+                        winRate: "73%",
+                        description: "A classic PEKKA Bridge Spam deck with Zap for Arena 19 and 21+.",
+                        minArena: 19,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Double Elixir Loon Freeze",
+                        cards: [30, 34, 78, 14, 4, 11, 13, 7],
+                        elixir: 4.1,
+                        winRate: "70%",
+                        description: "A Balloon Freeze deck optimized for double elixir in Arena 20.",
+                        minArena: 20,
+                        maxArena: 20
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Bait",
+                        cards: [22, 33, 26, 31, 32, 11, 5, 38],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A bait deck featuring Royal Champion as a powerful defensive card that transitions into offense.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Electro Giant Lightning",
+                        cards: [20, 24, 23, 27, 18, 5, 40, 37],
+                        elixir: 3.9,
+                        winRate: "70%",
+                        description: "Uses Electro Giant as the main win condition with Lightning to clear defenses.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Lavaloon",
+                        cards: [36, 30, 7, 38, 37, 23, 4, 26],
+                        elixir: 4.1,
+                        winRate: "71%",
+                        description: "A powerful air attack deck with Lava Hound tanking for Balloon, difficult to defend against.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Goblin Drill Cycle",
+                        cards: [21, 10, 26, 5, 18, 37, 4, 25],
+                        elixir: 2.9,
+                        winRate: "69%",
+                        description: "A fast cycle deck that uses Goblin Drill to apply constant pressure on the opponent.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Control",
+                        cards: [22, 10, 26, 32, 5, 18, 31, 23],
+                        elixir: 3.5,
+                        winRate: "73%",
+                        description: "Uses PEKKA for defense and creates quick bridge spam attacks with Dark Prince and other cards.",
+                        minArena: 6,
+                        maxArena: 10
+                    }
+                ],
+                // Arena 11-16 (advanced)
+                advanced: [
+                    {
+                        name: "Mega Knight Bait",
+                        cards: [19, 33, 10, 31, 26, 37, 11, 38],
+                        elixir: 3.8,
+                        winRate: "67%",
+                        description: "Uses Mega Knight for defense and Goblin Barrel for tower damage, with multiple bait elements.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Balloon Freeze",
+                        cards: [30, 34, 10, 37, 5, 18, 40, 14],
+                        elixir: 3.5,
+                        winRate: "66%",
+                        description: "A surprise attack deck that uses Balloon with Freeze to catch opponents off guard.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Hog Earthquake",
+                        cards: [28, 29, 4, 10, 18, 5, 25, 13],
+                        elixir: 3.0,
+                        winRate: "68%",
+                        description: "Uses Hog Rider with Earthquake to break through buildings and defensive structures.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Miner Poison Control",
+                        cards: [38, 39, 26, 10, 5, 18, 31, 40],
+                        elixir: 3.1,
+                        winRate: "65%",
+                        description: "A control deck that uses Miner and Poison for consistent tower damage while defending well.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "PEKKA Bridge Spam",
+                        cards: [35, 27, 4, 37, 28, 13, 38, 26],
+                        elixir: 3.9,
+                        winRate: "69%",
+                        description: "Uses PEKKA for defense and creates powerful bridge spam attacks with multiple threats.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Classic LogBait",
+                        cards: [33, 31, 32, 26, 11, 18, 5, 10],
+                        elixir: 3.3,
+                        winRate: "67%",
+                        description: "The famous LogBait deck that uses Goblin Barrel as win condition and bait cards for The Log.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Golem Beatdown",
+                        cards: [42, 53, 48, 39, 18, 64, 26, 32],
+                        elixir: 4.3,
+                        winRate: "68%",
+                        description: "Heavy golem for tanking with Night Witch and support spells.",
+                        minArena: 11,
+                        maxArena: 16
+                    },
+                    {
+                        name: "Wall Breakers Cycle",
+                        cards: [69, 51, 49, 59, 26, 5, 10, 32],
+                        elixir: 3.0,
+                        winRate: "66%",
+                        description: "Fast cycle deck with Wall Breakers as win condition.",
+                        minArena: 11,
+                        maxArena: 16
+                    }
+                ],
+                // Arena 17-22 (expert)
+                expert: [
+                    {
+                        name: "Archer Queen Mega Knight Wall Breakers",
+                        cards: [73, 19, 69, 10, 26, 5, 64, 37],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A powerful deck with Archer Queen, Mega Knight and Wall Breakers for Arena 17.",
+                        minArena: 17,
+                        maxArena: 17
+                    },
+                    {
+                        name: "Monk Firecracker Hog Cycle",
+                        cards: [74, 59, 28, 26, 5, 64, 25, 4],
+                        elixir: 3.1,
+                        winRate: "71%",
+                        description: "A cycle deck with Monk, Firecracker and Hog Rider for Arena 18.",
+                        minArena: 18,
+                        maxArena: 18
+                    },
+                    {
+                        name: "PEKKA Zap Bridge Spam",
+                        cards: [35, 37, 54, 39, 27, 40, 48, 13],
+                        elixir: 4.0,
+                        winRate: "73%",
+                        description: "A classic PEKKA Bridge Spam deck with Zap for Arena 19 and 21+.",
+                        minArena: 19,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Double Elixir Loon Freeze",
+                        cards: [30, 34, 78, 14, 4, 11, 13, 7],
+                        elixir: 4.1,
+                        winRate: "70%",
+                        description: "A Balloon Freeze deck optimized for double elixir in Arena 20.",
+                        minArena: 20,
+                        maxArena: 20
+                    },
+                    {
+                        name: "2.6 Hog Cycle",
+                        cards: [28, 13, 18, 5, 25, 26, 4, 64],
+                        elixir: 2.6,
+                        winRate: "70%",
+                        description: "The legendary 2.6 Hog Cycle deck, one of the most famous decks ever in Clash Royale.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Bait",
+                        cards: [22, 33, 26, 31, 32, 11, 5, 38],
+                        elixir: 3.6,
+                        winRate: "72%",
+                        description: "A bait deck featuring Royal Champion as a powerful defensive card that transitions into offense.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Electro Giant Lightning",
+                        cards: [20, 24, 23, 27, 18, 5, 40, 37],
+                        elixir: 3.9,
+                        winRate: "70%",
+                        description: "Uses Electro Giant as the main win condition with Lightning to clear defenses.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Lavaloon",
+                        cards: [36, 30, 7, 38, 37, 23, 4, 26],
+                        elixir: 4.1,
+                        winRate: "71%",
+                        description: "A powerful air attack deck with Lava Hound tanking for Balloon, difficult to defend against.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Goblin Drill Cycle",
+                        cards: [21, 10, 26, 5, 18, 37, 4, 25],
+                        elixir: 2.9,
+                        winRate: "69%",
+                        description: "A fast cycle deck that uses Goblin Drill to apply constant pressure on the opponent.",
+                        minArena: 17,
+                        maxArena: 22
+                    },
+                    {
+                        name: "Royal Champion Control",
+                        cards: [22, 10, 26, 32, 5, 18, 31, 23],
+                        elixir: 3.5,
+                        winRate: "73%",
+                        description: "A fast deck that uses golden knight to apply constant pressure on the opponent.",
+                        minArena: 17,
+                        maxArena: 22
+                    }
+                ]
+            }
+            
+            // DOM Elements
+            const cardSearchInput = document.getElementById('card-search');
+            const cardSuggestions = document.getElementById('card-suggestions');
+            const selectedCardIdInput = document.getElementById('selected-card-id');
+            const deckAdvisorForm = document.getElementById('deck-advisor-form');
+            const recommendedDecksContainer = document.getElementById('recommended-decks');
+            const loadingElement = document.getElementById('loading');
+            const noResultsElement = document.getElementById('no-results');
+            
+            // Card search functionality
+            cardSearchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                if (searchTerm.length < 2) {
+                    cardSuggestions.style.display = 'none';
+                    return;
+                }
+                
+                const filteredCards = cards.filter(card => 
+                    card.name.toLowerCase().includes(searchTerm)
+                );
+                
+                if (filteredCards.length > 0) {
+                    renderCardSuggestions(filteredCards);
+                    cardSuggestions.style.display = 'block';
+                } else {
+                    cardSuggestions.style.display = 'none';
+                }
+            });
+            
+            // Render card suggestions
+            function renderCardSuggestions(filteredCards) {
+                cardSuggestions.innerHTML = '';
+                
+                filteredCards.slice(0, 5).forEach(card => {
+                    const suggestionElement = document.createElement('div');
+                    suggestionElement.className = 'card-suggestion';
+                    suggestionElement.innerHTML = `
+                        <img src="${card.image}" alt="${card.name}">
+                        <span>${card.name}</span>
+                    `;
+                    
+                    suggestionElement.addEventListener('click', function() {
+                        cardSearchInput.value = card.name;
+                        selectedCardIdInput.value = card.id;
+                        cardSuggestions.style.display = 'none';
+                    });
+                    
+                    cardSuggestions.appendChild(suggestionElement);
+                });
+            }
+            
+            // Close suggestions when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.card-search-container')) {
+                    cardSuggestions.style.display = 'none';
+                }
+            });
+            
+            // Form submission
+            deckAdvisorForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const arenaValue = document.getElementById('arena-select').value;
+                const selectedCardId = selectedCardIdInput.value;
+                
+                if (!arenaValue) {
+                    alert('Please select your arena');
+                    return;
+                }
+                
+                // Show loading indicator
+                loadingElement.classList.add('visible');
+                recommendedDecksContainer.innerHTML = '';
+                noResultsElement.classList.remove('visible');
+                
+                // Simulate loading delay for better UX
+                setTimeout(() => {
+                    findDecks(parseInt(arenaValue), selectedCardId ? parseInt(selectedCardId) : null);
+                    loadingElement.classList.remove('visible');
+                }, 800);
+            });
+            
+            // Sostituisci la funzione findDecks con questa versione
+function findDecks(arenaNumber, cardId) {
+    let matchingDecks = [];
+    const MAX_DECKS_TO_SHOW = 10;
+
+    // Determine category based on arena number
+    let category;
+    if (arenaNumber >= 1 && arenaNumber <= 5) {
+        category = 'beginners';
+    } else if (arenaNumber >= 6 && arenaNumber <= 10) {
+        category = 'intermediate';
+    } else if (arenaNumber >= 11 && arenaNumber <= 16) {
+        category = 'advanced';
+    } else if (arenaNumber >= 17 && arenaNumber <= 22) {
+        category = 'expert';
+    }
+
+    // Get all decks from the category
+    const categoryDecks = decks[category] ? [...decks[category]] : []; // Clone to avoid modifying original
+
+    // 1. Prioritize decks with the selected card within the exact arena range
+    if (cardId) {
+        const decksWithCardInArena = categoryDecks.filter(deck =>
+            deck.cards.includes(cardId) &&
+            arenaNumber >= deck.minArena && arenaNumber <= deck.maxArena
+        );
+        matchingDecks.push(...decksWithCardInArena);
+        matchingDecks = removeDuplicateDecks(matchingDecks);
+    }
+
+    // 2. Add other decks from the exact arena range (if needed and not already added)
+    if (matchingDecks.length < MAX_DECKS_TO_SHOW) {
+        const otherDecksInArena = categoryDecks.filter(deck =>
+            arenaNumber >= deck.minArena && arenaNumber <= deck.maxArena &&
+            !matchingDecks.some(md => md.name === deck.name) // Avoid duplicates
+        );
+        matchingDecks.push(...otherDecksInArena);
+        matchingDecks = removeDuplicateDecks(matchingDecks);
+    }
+
+    // 3. If still not enough, add decks from nearby arenas (+/- 2) within the same category
+    if (matchingDecks.length < MAX_DECKS_TO_SHOW) {
+        const nearbyDecks = categoryDecks.filter(deck =>
+            (Math.abs(arenaNumber - deck.minArena) <= 2 || Math.abs(arenaNumber - deck.maxArena) <= 2) && // Check arenas within +/- 2 range
+            !(arenaNumber >= deck.minArena && arenaNumber <= deck.maxArena) && // Exclude decks already considered in step 2
+            !matchingDecks.some(md => md.name === deck.name) // Avoid duplicates
+        );
+        matchingDecks.push(...nearbyDecks);
+        matchingDecks = removeDuplicateDecks(matchingDecks);
+    }
+
+    // 4. If still not enough, add any remaining decks from the category
+    if (matchingDecks.length < MAX_DECKS_TO_SHOW) {
+        const anyCategoryDecks = categoryDecks.filter(deck =>
+            !matchingDecks.some(md => md.name === deck.name) // Avoid duplicates already added
+        );
+        matchingDecks.push(...anyCategoryDecks);
+        matchingDecks = removeDuplicateDecks(matchingDecks);
+    }
+
+    // Randomize deck selection - shuffle the array
+    matchingDecks = shuffleArray(matchingDecks);
+
+    // Display results - pass up to MAX_DECKS_TO_SHOW decks to renderDecks
+    if (matchingDecks.length > 0) {
+        const decksToRender = matchingDecks.slice(0, MAX_DECKS_TO_SHOW);
+        renderDecks(decksToRender);
+    } else {
+        noResultsElement.classList.add('visible');
+    }
+}
+
+// Add this function to shuffle the decks array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // swap elements
+    }
+    return array;
+}
+            
+            // Remove duplicate decks based on name
+            function removeDuplicateDecks(decks) {
+                const uniqueDecks = [];
+                const deckNames = new Set();
+                
+                decks.forEach(deck => {
+                    if (!deckNames.has(deck.name)) {
+                        deckNames.add(deck.name);
+                        uniqueDecks.push(deck);
+                    }
+                });
+                
+                return uniqueDecks;
+            }
+            
+            // Render decks to the container
+            function renderDecks(decks) {
+                recommendedDecksContainer.innerHTML = '';
+                
+                // Render all the decks provided by findDecks
+                decks.forEach(deck => {
+                    const deckElement = document.createElement('div');
+                    deckElement.className = 'deck-card-container visible';
+                    
+                    // Create deck header
+                    const deckHeader = document.createElement('div');
+                    deckHeader.className = 'deck-header';
+                    deckHeader.innerHTML = `<h3>${deck.name}</h3>`;
+                    
+                    // Create deck body
+                    const deckBody = document.createElement('div');
+                    deckBody.className = 'deck-body';
+                    
+                    // Create deck info
+                    const deckInfo = document.createElement('div');
+                    deckInfo.className = 'deck-info';
+                    deckInfo.innerHTML = `
+                        <div class="deck-elixir">
+                            <i class="fas fa-tint"></i> ${deck.elixir.toFixed(1)}
+                        </div>
+                        <div class="deck-win-rate">
+                            <i class="fas fa-trophy"></i> ${deck.winRate}
+                        </div>
+                    `;
+                    
+                    // Create deck cards
+                    const deckCards = document.createElement('div');
+                    deckCards.className = 'deck-cards';
+                    
+                    // Add each card to the deck
+                    deck.cards.forEach(cardId => {
+                        const card = cards.find(c => c.id === cardId);
+                        if (card) {
+                            const cardElement = document.createElement('div');
+                            cardElement.className = 'deck-card';
+                            cardElement.innerHTML = `<img src="${card.image}" alt="${card.name}" title="${card.name} (${card.elixir} elixir)">`;
+                            deckCards.appendChild(cardElement);
+                        }
+                    });
+                    
+                    // Create deck description
+                    const deckDescription = document.createElement('div');
+                    deckDescription.className = 'deck-description';
+                    deckDescription.textContent = deck.description || 'No description available.';
+                    
+                    // Create deck arena
+                    const deckArena = document.createElement('div');
+                    deckArena.className = 'deck-arena';
+                    deckArena.textContent = `Arena ${deck.minArena}-${deck.maxArena}`;
+                    
+                    // Assemble the deck
+                    deckBody.appendChild(deckInfo);
+                    deckBody.appendChild(deckCards);
+                    deckBody.appendChild(deckDescription);
+                    deckBody.appendChild(deckArena);
+                    
+                    deckElement.appendChild(deckHeader);
+                    deckElement.appendChild(deckBody);
+                    
+                    recommendedDecksContainer.appendChild(deckElement);
+                });
+            }
+        });
+
+        
+    </script>
+                    <footer>
+                        <div class="container">
+                            <div class="footer-grid">
+                                <div class="footer-about">
+                                    <img src="logo1.jpg" alt="RoyaleMeta.fun Logo" class="footer-logo">
+                                    <h3>RoyaleMeta<span>.fun</span></h3>
+                                    <p>The ultimate resource hub for Clash Royale players. Get the latest meta decks, tier lists, strategies, and guides.</p>
+                                    <div class="social-links">
+                                        <a href="https://x.com/royale_meta" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                                <div class="footer-links">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="popular-decks.html">Popular Decks</a></li>
+                                        <li><a href="deck.html">Deck</a></li>
+                                        <li><a href="best-clash-royale-cards-meta-april-2025.html">Meta Tier List</a></li>
+                                        <li><a href="best-clash-royale-decks-for-2025.html">Deck Guides</a></li>
+                                        <li><a href="clash-royale-strategies-guide.html">Strategies</a></li>
+                                        <li><a href="clash-royale-news-updates.html">News</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-links">
+                                    <h4>Resources</h4>
+                                    <ul>
+                                        <li><a href="deck-builder.html">Deck Builder</a></li>
+                                        <li><a href="cards.html">Cards</a></li>
+                                        <li><a href="profile.html">Your Profile</a></li>
+                                        <li><a href="pro-players.html">Pro Player Profiles</a></li>
+                                        <li><a href="#">Tournament Guides</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-links">
+                                    <h4>About</h4>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="privacy.html">Privacy Policy</a></li>
+                                        <li><a href="terms.html">Terms of Service</a></li>
+                                        <li><a href="#">Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-bottom">
+                                <p>&copy; 2025 RoyaleMeta.fun. All rights reserved. Not affiliated with Supercell.</p>
+                                <p>Clash Royale and its content are trademarks and copyrights of Supercell.</p>
+                            </div>
+                        </div>
+                    </footer>
+                    </body>
+                    </html>
